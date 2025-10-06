@@ -3,73 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tide of Colors | Resonant Tide</title>
+  <title>Tide of Colors: A Nationwide Collaborative Mural</title>
   <style>
     body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
+      background: #f4f8fb;
       margin: 0;
       padding: 0;
     }
+
     h1 {
-      font-size: 2.5em;
-      margin-top: 50px;
-      color: #1d3557;
+      color: #1e3a5f;
+      margin-top: 30px;
     }
+
     p {
-      font-size: 1.1em;
       max-width: 700px;
-      margin: 20px auto 40px;
-      line-height: 1.6;
+      margin: 10px auto 30px;
+      color: #333;
+      font-size: 1.1em;
     }
-    .submit-btn {
-      display: inline-block;
-      background-color: #457b9d;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .submit-btn:hover {
-      background-color: #1d3557;
-    }
+
     .mural-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 40px;
-      max-width: 900px;
-      margin: 0 auto;
+      grid-template-columns: repeat(22, 25px);
+      grid-template-rows: repeat(22, 25px);
+      gap: 2px;
+      justify-content: center;
+      margin: 40px auto;
     }
-    .mural-tile {
-      width: 100%;
-      padding-top: 100%;
-      background-color: #e0e0e0;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      position: relative;
+
+    .tile {
+      width: 25px;
+      height: 25px;
+      background: #d1e2f3;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    .tile:hover {
+      background: #6baed6;
+      transform: scale(1.1);
+    }
+
+    .submit-button {
+      display: inline-block;
+      background: #1e3a5f;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-bottom: 50px;
+    }
+
+    .submit-button:hover {
+      background: #2e598f;
     }
   </style>
 </head>
 <body>
-  <h1>Tide of Colors: A Nationwide Collaborative Mural</h1>
+  <h1>Tide of Colors</h1>
   <p>
-    “Tide of Colors” is a digital mural uniting youth artists across the nation. Each piece represents a story — a glimpse into the artist’s identity, culture, and personal journey. Together, they form one interconnected wave of creativity and connection. 
+    <b>Tide of Colors</b> is Resonant Tide’s nationwide collaborative mural, uniting youth artists across the country to celebrate culture, identity, and creativity. Each square in this mural represents a voice, a story, and a wave of color shaping our shared ocean of art.  
   </p>
-  <a href="https://docs.google.com/forms/d/1sDSJNSIlhN4yfeXCTanGF67fmbhJQrT54ZyRj_ucZx8/viewform?usp=sharing" target="_blank" class="submit-btn">Submit Your Art</a>
-  
-  <div class="mural-grid">
-    <!-- placeholder tiles for now — later these will show real submissions -->
-    <div class="mural-tile"></div>
-    <div class="mural-tile"></div>
-    <div class="mural-tile"></div>
-    <div class="mural-tile"></div>
-    <div class="mural-tile"></div>
-    <div class="mural-tile"></div>
-  </div>
+
+  <a href="https://docs.google.com/forms/d/1sDSJNSIlhN4yfeXCTanGF67fmbhJQrT54ZyRj_ucZx8" class="submit-button" target="_blank">
+    Submit Your Art
+  </a>
+
+  <div class="mural-grid" id="muralGrid"></div>
+
+  <script>
+    const grid = document.getElementById('muralGrid');
+    for (let i = 0; i < 22 * 22; i++) {
+      const tile = document.createElement('div');
+      tile.classList.add('tile');
+      grid.appendChild(tile);
+    }
+  </script>
 </body>
 </html>
